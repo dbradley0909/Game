@@ -7,7 +7,7 @@ A number-guessing game.
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
+public class game {
     public static void main(String[] args){
         Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
@@ -25,7 +25,17 @@ public class Game {
         while(true){
             System.out.println("Enter your guess(1-100):");
 
-            int playerGuess = scanner.nextInt();
+            //int playerGuess = scanner.nextInt();
+
+
+            int playerGuess = 0;
+            try {
+              playerGuess = scanner.nextInt();
+            } catch (Exception e) {
+                //input.nextLine();
+                System.out.println("That's not an integer, enter " + number);
+            continue;
+            }
             trycount++;
 
             if (playerGuess == number) {
